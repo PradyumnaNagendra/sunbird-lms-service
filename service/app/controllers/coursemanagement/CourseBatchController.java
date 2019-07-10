@@ -67,6 +67,10 @@ public class CourseBatchController extends BaseController {
         });
   }
 
+    public Promise<Result> getParticipants(String batchId) {
+        return handleRequest(ActorOperations.GET_PARTICIPANTS.getValue(), batchId, JsonKey.BATCH_ID, false);
+    }
+
   @SuppressWarnings({"unchecked", "rawtypes"})
   public Promise<Result> search() {
     try {
